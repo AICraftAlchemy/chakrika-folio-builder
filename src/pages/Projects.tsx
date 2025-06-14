@@ -45,23 +45,23 @@ const Projects = () => {
     <div className="min-h-screen bg-gradient-to-br from-dark-gray via-gray-900 to-black text-white">
       <Navigation />
       
-      <div className="pt-24 pb-12">
+      <div className="pt-20 sm:pt-24 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6">
               My <span className="bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">Projects</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
               A showcase of my machine learning, data science, and AI projects
             </p>
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-2">
             {categories.map((category, index) => (
               <button
                 key={category}
-                className={`px-6 py-3 rounded-full border-2 transition-all duration-300 hover:scale-105 ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 transition-all duration-300 hover:scale-105 text-sm sm:text-base ${
                   index === 0 
                     ? 'bg-neon-blue text-black border-neon-blue' 
                     : 'border-gray-600 text-gray-300 hover:border-neon-blue hover:text-neon-blue'
@@ -73,35 +73,35 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-light-gray/20 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-neon-blue/50 transition-all duration-300 hover:scale-105 animate-fade-in"
+                className="bg-light-gray/20 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700 hover:border-neon-blue/50 transition-all duration-300 hover:scale-105 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center">
-                    <div className={`bg-${project.color}/20 p-3 rounded-lg mr-4`}>
-                      <Code className={`text-${project.color}`} size={28} />
+                <div className="flex items-start justify-between mb-4 sm:mb-6">
+                  <div className="flex items-start w-full">
+                    <div className={`bg-${project.color}/20 p-3 rounded-lg mr-3 sm:mr-4 flex-shrink-0`}>
+                      <Code className={`text-${project.color}`} size={24} />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
-                      <span className={`text-${project.color} text-sm font-semibold`}>{project.category}</span>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-1 leading-tight">{project.title}</h3>
+                      <span className={`text-${project.color} text-xs sm:text-sm font-semibold`}>{project.category}</span>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+                <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{project.description}</p>
 
                 {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-400 mb-3">TECHNOLOGIES USED</h4>
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="text-xs sm:text-sm font-semibold text-gray-400 mb-2 sm:mb-3">TECHNOLOGIES USED</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-dark-gray/60 text-gray-300 rounded-full text-sm border border-gray-600 hover:border-neon-blue/50 transition-colors"
+                        className="px-2 sm:px-3 py-1 bg-dark-gray/60 text-gray-300 rounded-full text-xs sm:text-sm border border-gray-600 hover:border-neon-blue/50 transition-colors"
                       >
                         {tech}
                       </span>
@@ -115,9 +115,9 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 hover:scale-105"
+                    className="flex items-center justify-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 hover:scale-105 text-sm sm:text-base"
                   >
-                    <Github size={18} />
+                    <Github size={16} className="sm:w-4 sm:h-4" />
                     <span>View on GitHub</span>
                   </a>
                 </div>
@@ -126,25 +126,25 @@ const Projects = () => {
           </div>
 
           {/* Project Statistics */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 p-6 rounded-2xl border border-neon-blue/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-neon-blue mb-2">4+</div>
-              <div className="text-gray-300">Total Projects</div>
+          <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 p-4 sm:p-6 rounded-2xl border border-neon-blue/20 text-center animate-fade-in">
+              <div className="text-2xl sm:text-3xl font-bold text-neon-blue mb-1 sm:mb-2">4+</div>
+              <div className="text-sm sm:text-base text-gray-300">Total Projects</div>
             </div>
             
-            <div className="bg-gradient-to-br from-neon-purple/10 to-pink-500/10 p-6 rounded-2xl border border-neon-purple/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-neon-purple mb-2">3</div>
-              <div className="text-gray-300">ML Projects</div>
+            <div className="bg-gradient-to-br from-neon-purple/10 to-pink-500/10 p-4 sm:p-6 rounded-2xl border border-neon-purple/20 text-center animate-fade-in">
+              <div className="text-2xl sm:text-3xl font-bold text-neon-purple mb-1 sm:mb-2">3</div>
+              <div className="text-sm sm:text-base text-gray-300">ML Projects</div>
             </div>
             
-            <div className="bg-gradient-to-br from-green-400/10 to-emerald-500/10 p-6 rounded-2xl border border-green-400/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-green-400 mb-2">7+</div>
-              <div className="text-gray-300">Technologies</div>
+            <div className="bg-gradient-to-br from-green-400/10 to-emerald-500/10 p-4 sm:p-6 rounded-2xl border border-green-400/20 text-center animate-fade-in">
+              <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">7+</div>
+              <div className="text-sm sm:text-base text-gray-300">Technologies</div>
             </div>
             
-            <div className="bg-gradient-to-br from-yellow-400/10 to-orange-500/10 p-6 rounded-2xl border border-yellow-400/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
-              <div className="text-gray-300">Open Source</div>
+            <div className="bg-gradient-to-br from-yellow-400/10 to-orange-500/10 p-4 sm:p-6 rounded-2xl border border-yellow-400/20 text-center animate-fade-in">
+              <div className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1 sm:mb-2">100%</div>
+              <div className="text-sm sm:text-base text-gray-300">Open Source</div>
             </div>
           </div>
         </div>
