@@ -2,8 +2,18 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/Resume/Resume.pdf';
+    link.download = 'Chakrika_Guttameedi_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-dark-gray via-gray-900 to-black text-white">
       <Navigation />
@@ -40,7 +50,10 @@ const Index = () => {
                     <ArrowRight size={20} />
                   </Link>
                   
-                  <button className="border-2 border-neon-blue px-8 py-4 rounded-lg text-neon-blue hover:bg-neon-blue hover:text-black transition-all duration-300 flex items-center space-x-2 hover:scale-105">
+                  <button 
+                    onClick={handleDownloadCV}
+                    className="border-2 border-neon-blue px-8 py-4 rounded-lg text-neon-blue hover:bg-neon-blue hover:text-black transition-all duration-300 flex items-center space-x-2 hover:scale-105"
+                  >
                     <Download size={20} />
                     <span>Download CV</span>
                   </button>
@@ -124,6 +137,8 @@ const Index = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

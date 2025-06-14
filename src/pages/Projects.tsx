@@ -1,6 +1,7 @@
 
 import Navigation from '@/components/Navigation';
-import { Code, ExternalLink, Github } from 'lucide-react';
+import Footer from '@/components/Footer';
+import { Code, Github } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -10,8 +11,7 @@ const Projects = () => {
       technologies: ["Python", "TensorFlow", "BERT", "LSTM", "CNN", "Federated Learning", "NLP"],
       category: "Machine Learning",
       color: "neon-blue",
-      github: "https://github.com/chakrikaguttameedi",
-      live: "#"
+      github: "https://github.com/chakrikaguttameedi"
     },
     {
       title: "Credit Card Fraud Detection using ML Models",
@@ -19,8 +19,7 @@ const Projects = () => {
       technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Logistic Regression", "Random Forest"],
       category: "Machine Learning",
       color: "neon-purple",
-      github: "https://github.com/chakrikaguttameedi",
-      live: "#"
+      github: "https://github.com/chakrikaguttameedi"
     },
     {
       title: "Spam Email Classifier using Multinomial Naive Bayes",
@@ -28,8 +27,7 @@ const Projects = () => {
       technologies: ["Python", "Scikit-learn", "NLTK", "TF-IDF", "Naive Bayes", "Email Processing"],
       category: "Natural Language Processing",
       color: "green-400",
-      github: "https://github.com/chakrikaguttameedi",
-      live: "#"
+      github: "https://github.com/chakrikaguttameedi"
     },
     {
       title: "Stock Price Prediction using Linear Regression",
@@ -37,8 +35,7 @@ const Projects = () => {
       technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Linear Regression", "Financial Data"],
       category: "Data Science",
       color: "yellow-400",
-      github: "https://github.com/chakrikaguttameedi",
-      live: "#"
+      github: "https://github.com/chakrikaguttameedi"
     }
   ];
 
@@ -112,23 +109,16 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex space-x-4">
+                {/* Action Button */}
+                <div>
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-dark-gray/60 text-gray-300 rounded-lg hover:bg-neon-blue hover:text-black transition-all duration-300 hover:scale-105"
+                    className="flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 hover:scale-105"
                   >
                     <Github size={18} />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 hover:scale-105"
-                  >
-                    <ExternalLink size={18} />
-                    <span>Live Demo</span>
+                    <span>View on GitHub</span>
                   </a>
                 </div>
               </div>
@@ -159,6 +149,8 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
