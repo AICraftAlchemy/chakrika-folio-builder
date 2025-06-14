@@ -1,5 +1,6 @@
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Award, Calendar, ExternalLink, CheckCircle } from 'lucide-react';
 
 const Certifications = () => {
@@ -181,6 +182,8 @@ const Certifications = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

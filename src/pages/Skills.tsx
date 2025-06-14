@@ -1,7 +1,7 @@
 
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Code, Database, Brain, Wrench, Star } from 'lucide-react';
+import { Code, Database, Brain, Wrench } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -60,15 +60,6 @@ const Skills = () => {
     }
   };
 
-  const getStarCount = (expertise: string) => {
-    switch (expertise) {
-      case 'Expert': return 5;
-      case 'Advanced': return 4;
-      case 'Proficient': return 3;
-      default: return 2;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-dark-gray via-gray-900 to-black text-white">
       <Navigation />
@@ -105,24 +96,11 @@ const Skills = () => {
                       key={skillIndex} 
                       className="bg-dark-gray/30 rounded-xl p-4 border border-gray-600/30 hover:bg-dark-gray/50 transition-all duration-300 hover:scale-[1.02]"
                     >
-                      <div className="flex justify-between items-center mb-2">
+                      <div className="flex justify-between items-center">
                         <span className="text-gray-200 font-semibold text-lg">{skill.name}</span>
                         <span className={`${getExpertiseColor(skill.expertise)} font-bold text-sm px-3 py-1 rounded-full bg-gray-800/50`}>
                           {skill.expertise}
                         </span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        {[...Array(5)].map((_, starIndex) => (
-                          <Star
-                            key={starIndex}
-                            size={16}
-                            className={`${
-                              starIndex < getStarCount(skill.expertise)
-                                ? `text-${category.color} fill-current`
-                                : 'text-gray-600'
-                            }`}
-                          />
-                        ))}
                       </div>
                     </div>
                   ))}
@@ -131,7 +109,7 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Overall Proficiency - Redesigned */}
+          {/* Core Competencies */}
           <div className="bg-gradient-to-r from-dark-gray/60 to-light-gray/40 p-10 rounded-3xl backdrop-blur-sm mb-16 animate-fade-in border border-gray-700/50">
             <h3 className="text-4xl font-bold text-center text-white mb-12">Core Competencies</h3>
             <div className="grid md:grid-cols-4 gap-8">
@@ -139,11 +117,7 @@ const Skills = () => {
                 <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-neon-blue/20 to-neon-blue/5 border border-neon-blue/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-neon-blue mb-2">AI/ML</div>
-                    <div className="flex justify-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={12} className="text-neon-blue fill-current" />
-                      ))}
-                    </div>
+                    <div className="text-sm text-gray-300">Expert</div>
                   </div>
                 </div>
                 <div className="text-gray-300 font-semibold">Artificial Intelligence</div>
@@ -153,12 +127,7 @@ const Skills = () => {
                 <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-neon-purple/20 to-neon-purple/5 border border-neon-purple/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-neon-purple mb-2">CODE</div>
-                    <div className="flex justify-center space-x-1">
-                      {[...Array(4)].map((_, i) => (
-                        <Star key={i} size={12} className="text-neon-purple fill-current" />
-                      ))}
-                      <Star size={12} className="text-gray-600" />
-                    </div>
+                    <div className="text-sm text-gray-300">Advanced</div>
                   </div>
                 </div>
                 <div className="text-gray-300 font-semibold">Programming</div>
@@ -168,11 +137,7 @@ const Skills = () => {
                 <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-green-400/20 to-green-400/5 border border-green-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-green-400 mb-2">DATA</div>
-                    <div className="flex justify-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={12} className="text-green-400 fill-current" />
-                      ))}
-                    </div>
+                    <div className="text-sm text-gray-300">Expert</div>
                   </div>
                 </div>
                 <div className="text-gray-300 font-semibold">Data Science</div>
@@ -182,12 +147,7 @@ const Skills = () => {
                 <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-yellow-400/20 to-yellow-400/5 border border-yellow-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-yellow-400 mb-2">TOOLS</div>
-                    <div className="flex justify-center space-x-1">
-                      {[...Array(4)].map((_, i) => (
-                        <Star key={i} size={12} className="text-yellow-400 fill-current" />
-                      ))}
-                      <Star size={12} className="text-gray-600" />
-                    </div>
+                    <div className="text-sm text-gray-300">Advanced</div>
                   </div>
                 </div>
                 <div className="text-gray-300 font-semibold">Frameworks</div>
@@ -195,7 +155,7 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Skill Highlights - Enhanced */}
+          {/* Skill Highlights */}
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-neon-blue/15 to-cyan-500/10 p-8 rounded-3xl border border-neon-blue/20 text-center animate-fade-in hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-neon-blue/20">
               <div className="text-6xl mb-6">🧠</div>

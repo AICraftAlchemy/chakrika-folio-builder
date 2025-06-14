@@ -1,5 +1,6 @@
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
 
 const Experience = () => {
@@ -152,6 +153,8 @@ const Experience = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
