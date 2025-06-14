@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -63,8 +63,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400 flex items-center justify-center">
-            Made with <Heart className="text-red-500 mx-2" size={16} /> by Chakrika Guttameedi © 2024
+          <p className="text-gray-400">
+            © 2024 Chakrika Guttameedi. All rights reserved.
           </p>
         </div>
       </div>

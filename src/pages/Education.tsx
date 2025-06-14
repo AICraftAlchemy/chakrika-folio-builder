@@ -1,5 +1,6 @@
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { GraduationCap, Calendar, Award } from 'lucide-react';
 
 const Education = () => {
@@ -63,10 +64,12 @@ const Education = () => {
 
                   {/* Content card */}
                   <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'} md:w-1/2`}>
-                    <div className={`bg-light-gray/30 p-8 rounded-2xl backdrop-blur-sm border-l-4 border-${edu.color} hover:bg-light-gray/50 transition-all duration-300 hover:scale-105`}>
+                    <div className={`bg-gradient-to-br from-light-gray/20 to-light-gray/5 p-8 rounded-3xl backdrop-blur-sm border-l-4 border-${edu.color} hover:bg-light-gray/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-${edu.color}/20`}>
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center">
-                          <GraduationCap className={`text-${edu.color} mr-3`} size={28} />
+                          <div className={`bg-${edu.color}/20 p-3 rounded-xl mr-4`}>
+                            <GraduationCap className={`text-${edu.color}`} size={28} />
+                          </div>
                           <div>
                             <h3 className="text-xl font-bold text-white mb-1">{edu.institution}</h3>
                             <p className={`text-${edu.color} font-semibold`}>{edu.degree}</p>
@@ -74,12 +77,12 @@ const Education = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center mb-4 space-x-6">
-                        <div className="flex items-center">
+                      <div className="flex items-center mb-6 space-x-6">
+                        <div className="flex items-center bg-dark-gray/30 px-4 py-2 rounded-lg">
                           <Calendar className="text-gray-400 mr-2" size={18} />
                           <span className="text-gray-300">{edu.duration}</span>
                         </div>
-                        <div className="flex items-center">
+                        <div className="flex items-center bg-dark-gray/30 px-4 py-2 rounded-lg">
                           <Award className="text-gray-400 mr-2" size={18} />
                           <span className={`text-${edu.color} font-bold`}>{edu.grade}</span>
                         </div>
@@ -95,26 +98,28 @@ const Education = () => {
 
           {/* Academic Achievements */}
           <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 p-6 rounded-2xl border border-neon-blue/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-neon-blue mb-2">8.0</div>
-              <div className="text-gray-300">Current CGPA</div>
+            <div className="bg-gradient-to-br from-neon-blue/15 to-neon-purple/10 p-8 rounded-3xl border border-neon-blue/20 text-center animate-fade-in hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-neon-blue/20">
+              <div className="text-4xl font-bold text-neon-blue mb-2">8.0</div>
+              <div className="text-gray-300 font-semibold text-lg">Current CGPA</div>
               <div className="text-sm text-gray-400 mt-1">B.Tech AI/ML</div>
             </div>
             
-            <div className="bg-gradient-to-br from-neon-purple/10 to-pink-500/10 p-6 rounded-2xl border border-neon-purple/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-neon-purple mb-2">91%</div>
-              <div className="text-gray-300">Intermediate</div>
+            <div className="bg-gradient-to-br from-neon-purple/15 to-pink-500/10 p-8 rounded-3xl border border-neon-purple/20 text-center animate-fade-in hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-neon-purple/20">
+              <div className="text-4xl font-bold text-neon-purple mb-2">91%</div>
+              <div className="text-gray-300 font-semibold text-lg">Intermediate</div>
               <div className="text-sm text-gray-400 mt-1">Science Stream</div>
             </div>
             
-            <div className="bg-gradient-to-br from-green-400/10 to-emerald-500/10 p-6 rounded-2xl border border-green-400/20 text-center animate-fade-in">
-              <div className="text-3xl font-bold text-green-400 mb-2">93%</div>
-              <div className="text-gray-300">Secondary School</div>
+            <div className="bg-gradient-to-br from-green-400/15 to-emerald-500/10 p-8 rounded-3xl border border-green-400/20 text-center animate-fade-in hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-green-400/20">
+              <div className="text-4xl font-bold text-green-400 mb-2">93%</div>
+              <div className="text-gray-300 font-semibold text-lg">Secondary School</div>
               <div className="text-sm text-gray-400 mt-1">SSC Board</div>
             </div>
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
